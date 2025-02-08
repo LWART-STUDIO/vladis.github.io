@@ -1,0 +1,85 @@
+.benefits {
+  padding: 80px 0 120px;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1224px;
+      height: 1224px;
+      z-index: -1;
+      background: url('./../../img/benefits/design-element.svg') center no-repeat;
+      background-size: cover;
+      transform: translate(50%, -20%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 1224px;
+      height: 1224px;
+      z-index: -1;
+      background: url('./../../img/benefits/design-element.svg') center no-repeat;
+      background-size: cover;
+      transform: translate(-50%, 45%);
+    }
+  }
+
+  &__heading {
+    max-width: 694px;
+    margin: 0 auto 51px;
+
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.15;
+    text-align: center;
+    color: $black;
+
+    span {
+      color: $accent-color;
+    }
+  }
+
+  &-card {
+    margin-bottom: 74px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &_even .card__info {
+      order: 1;
+    }
+
+    &_even .card__num {
+      max-width: 542px;
+      margin-left: 58%;
+    }
+  }
+}
+
+@media (max-width: 1260px) {
+  .benefits {
+    padding: calc(40px + (80 - 40) * (100vw - 320px) / (1260 - 320)) 0
+      calc(60px + (120 - 60) * (100vw - 320px) / (1260 - 320));
+
+    &__heading {
+      font-size: calc(20px + (36 - 20) * (100vw - 320px) / (1260 - 320));
+      max-width: calc(290px + (694 - 290) * (100vw - 320px) / (1260 - 320));
+    }
+
+    &-card {
+      &_even .card__num {
+        margin: 0 auto;
+        max-width: 649px;
+      }
+    }
+  }
+}
